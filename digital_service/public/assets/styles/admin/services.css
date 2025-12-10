@@ -1,0 +1,186 @@
+:root {
+    --bg-main: #0b0218;
+    --bg-elevated: #110724;
+    --border: rgba(255,255,255,0.07);
+    --text: #f3e8ff;
+    --text-dim: #c0b0e8;
+    --accent: #a855ff;
+    --accent-hover: #bb79ff;
+    --danger: #ff4d4d;
+}
+
+a {
+    text-decoration: none;
+}
+body {
+    background: var(--bg-main);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+}
+
+.admin-layout {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    z-index: 10;
+}
+
+.admin-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 40px 55px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.page-header h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.page-header .subtitle {
+    font-size: 15px;
+    color: var(--text-dim);
+    margin-top: 4px;
+}
+
+.add-service-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 14px;
+    font-weight: 700;
+    margin-bottom: 26px;
+    transition: .25s ease;
+}
+
+.add-service-btn:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 0 18px rgba(168, 85, 255, .35);
+}
+
+.service-grid-admin {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+    gap: 24px;
+}
+
+.service-card-admin {
+    background: var(--bg-elevated);
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: .25s ease;
+}
+
+.service-card-admin:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(138,99,255,.25);
+}
+
+.service-thumb-admin {
+    width: 100%;
+    height: 160px;
+    background: rgba(255,255,255,.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.service-thumb-admin img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no-thumb {
+    font-size: 28px;
+    color: var(--text-dim);
+}
+
+.service-info-admin {
+    padding: 16px 18px 22px;
+}
+
+.service-info-admin h4 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.service-info-admin .price {
+    font-size: 15px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.btn-edit, .btn-delete {
+    flex: 1;
+    padding: 10px 14px;
+    font-size: 14px;
+    border-radius: 12px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    transition: .22s ease;
+}
+
+.btn-edit {
+    background: rgba(168,85,255,.25);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn-edit:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn-delete {
+    background: rgba(255,0,0,.15);
+    border: 1px solid rgba(255,0,0,.35);
+    color: #ff7d7d;
+}
+
+.btn-delete:hover {
+    background: #ff3b3b;
+    color: #fff;
+    box-shadow: 0 0 14px rgba(255,40,40,.55);
+}
+
+@media (max-width: 780px) {
+    .admin-content {
+        margin-left: 0;
+        padding: 26px 20px;
+    }
+    
+    .add-service-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

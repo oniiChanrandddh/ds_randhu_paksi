@@ -1,0 +1,204 @@
+:root {
+    --bg-main: #0b0218;
+    --bg-elevated: #110724;
+    --border: rgba(255,255,255,0.08);
+    --text: #efe1ff;
+    --text-dim: #b69ce8;
+    --accent: #a855ff;
+    --accent-hover: #be82ff;
+    --danger: #ff4d4d;
+
+    --pending: #ffc356;
+    --approved: #00e987;
+    --progress: #5ea1ff;
+    --review: #ff88dd;
+    --done: #8cff7a;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: var(--bg-main);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+}
+
+.admin-layout {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    z-index: 10;
+}
+
+.admin-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 50px 55px 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn .35s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-size: 32px;
+    font-weight: 800;
+    transition: .25s ease;
+}
+
+.page-header .subtitle {
+    font-size: 15px;
+    margin-top: 6px;
+    color: var(--text-dim);
+}
+
+.table-card {
+    width: 100%;
+    max-width: 1100px;
+    background: #110724;
+    padding: 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 0 28px rgba(168,85,255,.08);
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders-table thead tr {
+    background: rgba(255,255,255,.05);
+}
+
+.orders-table th {
+    text-align: left;
+    padding: 16px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.orders-table td {
+    padding: 15px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+}
+
+.orders-table tbody tr {
+    transition: .25s ease;
+}
+
+.orders-table tbody tr:hover {
+    background: rgba(168,85,255,.12);
+}
+
+.status-badge {
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    text-transform: capitalize;
+    display: inline-block;
+    transition: .25s ease;
+}
+
+.status-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 14px rgba(168,85,255,.25);
+}
+
+.badge-pending { background: rgba(255,180,0,.18); color: var(--pending); }
+.badge-approved { background: rgba(0,200,100,.18); color: var(--approved); }
+.badge-progress { background: rgba(70,140,255,.18); color: var(--progress); }
+.badge-review { background: rgba(255,118,208,.18); color: var(--review); }
+.badge-done { background: rgba(140,255,100,.18); color: var(--done); }
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-action {
+    padding: 10px 16px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: .25s ease;
+}
+
+.btn-attach {
+    background: rgba(168,85,255,.25);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn-attach:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(168,85,255,.4);
+}
+
+.btn-delete {
+    background: rgba(255,0,0,.15);
+    border: 1px solid rgba(255,0,0,.35);
+    color: #ff7676;
+}
+
+.btn-delete:hover {
+    background: var(--danger);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(255,50,50,.45);
+}
+
+.empty {
+    text-align: center;
+    padding: 22px;
+    color: var(--text-dim);
+    font-size: 15px;
+}
+
+@media(max-width: 780px){
+    .admin-content {
+        margin-left: 0;
+        padding: 30px 20px;
+    }
+    .table-card {
+        padding: 10px;
+        border-radius: 14px;
+    }
+    .orders-table th,
+    .orders-table td {
+        padding: 10px;
+        font-size: 13px;
+    }
+}

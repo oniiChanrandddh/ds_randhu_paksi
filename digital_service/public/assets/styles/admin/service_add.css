@@ -1,0 +1,221 @@
+:root {
+    --bg-main: #0b0218;
+    --bg-elevated: #110724;
+    --border: rgba(255,255,255,0.07);
+    --text: #f3e8ff;
+    --text-dim: #c0b0e8;
+    --accent: #a855ff;
+    --accent-hover: #bb79ff;
+    --danger: #ff4d4d;
+}
+
+.admin-content {
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 40px 55px 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.35s ease forwards;
+    gap: 30px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-header h1 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 32px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 10px;
+    transition: .3s ease;
+}
+
+.page-header h1:hover {
+    color: var(--accent-hover);
+    text-shadow: 0 0 18px rgba(168,85,255,.5);
+}
+
+.page-header .subtitle {
+    font-size: 16px;
+    color: var(--text-dim);
+    max-width: 520px;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.form-container {
+    background: var(--bg-elevated);
+    padding: 42px;
+    border-radius: 26px;
+    border: 1px solid var(--border);
+    width: 70%;
+    min-width: 650px;
+    box-shadow: 0 0 40px rgba(168,85,255,.12);
+    transition: .32s ease;
+}
+
+.form-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 60px rgba(168,85,255,.28);
+}
+
+.form-group {
+    margin-bottom: 26px;
+    width: 100%;
+}
+
+label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+    color: var(--text);
+}
+
+input, textarea {
+    width: 100%;
+    background: #0f0624;
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 15px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    transition: .25s ease;
+}
+
+input:hover, textarea:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 18px rgba(168,85,255,.25);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent-hover);
+    box-shadow: 0 0 26px rgba(168,85,255,.45);
+    outline: none;
+}
+
+textarea {
+    height: 130px;
+    resize: none;
+}
+
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.upload-label {
+    background: rgba(168,85,255,.18);
+    border: 1px solid var(--accent);
+    padding: 14px;
+    border-radius: 14px;
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    transition: .28s ease;
+}
+
+.upload-label:hover {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 22px rgba(168,85,255,.45);
+    transform: translateY(-3px);
+}
+
+#preview-container {
+    width: 230px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    display: none;
+    overflow: hidden;
+    margin-top: 12px;
+    transition: .28s ease;
+}
+
+#preview-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: .25s ease;
+}
+
+#preview-container img:hover {
+    transform: scale(1.05);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px 40px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: .28s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 0 35px rgba(168,85,255,.45);
+}
+
+.alert {
+    padding: 13px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    margin-bottom: 18px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.alert-error {
+    background: rgba(255,0,0,.15);
+    border: 1px solid #ff4d4d;
+    color: #ff7d7d;
+}
+
+@media (max-width: 980px) {
+    .form-container {
+        width: 100%;
+        min-width: unset;
+        padding: 28px;
+    }
+    .admin-content {
+        padding: 24px;
+    }
+}

@@ -1,0 +1,221 @@
+:root {
+    --bg-main: #0b0218;
+    --bg-elevated: #110724;
+    --border: rgba(255,255,255,0.1);
+    --text: #efe1ff;
+    --text-dim: #b69ce8;
+    --accent: #a855ff;
+    --accent-hover: #be82ff;
+    --danger: #ff4d4d;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: var(--bg-main);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+}
+
+.admin-layout {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    z-index: 10;
+}
+
+.admin-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 50px 55px 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn .35s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 32px;
+    font-weight: 800;
+    color: #fff;
+    transition: .25s ease;
+}
+
+
+.page-header .subtitle {
+    font-size: 15px;
+    margin-top: 6px;
+    color: var(--text-dim);
+    transition: .25s ease;
+}
+
+.page-header:hover .subtitle {
+    color: var(--text);
+    opacity: .85;
+}
+
+.table-card {
+    width: 100%;
+    max-width: 1000px;
+    background: var(--bg-elevated);
+    padding: 16px;
+    border-radius: 22px;
+    border: 1px solid var(--border);
+    box-shadow: 0 0 26px rgba(168,85,255,.12);
+    transition: .3s ease;
+}
+
+.table-card:hover {
+    box-shadow: 0 0 38px rgba(168,85,255,.2);
+}
+
+.table-users {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-users thead tr {
+    background: rgba(255,255,255,.07);
+    transition: .25s ease;
+}
+
+.table-users th {
+    text-align: left;
+    padding: 16px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 700;
+    user-select: none;
+}
+
+.table-users td {
+    padding: 15px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    transition: .25s ease;
+}
+
+.table-users tbody tr {
+    transition: .25s ease;
+    cursor: pointer;
+}
+
+.table-users tbody tr:hover {
+    background: rgba(168,85,255,.14);
+    transform: translateX(3px);
+}
+
+.role {
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 22px;
+    font-size: 13px;
+    text-transform: capitalize;
+    display: inline-block;
+    transition: .25s ease;
+}
+
+.role:hover {
+    filter: brightness(1.25);
+    transform: scale(1.05);
+}
+
+.role.admin {
+    background: rgba(255,180,0,.22);
+    color: #ffc356;
+}
+
+.role.client {
+    background: rgba(0,200,100,.22);
+    color: #00e987;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 10px 16px;
+    border-radius: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: .25s ease;
+}
+
+.btn-edit {
+    background: rgba(168,85,255,.27);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn-edit:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 22px rgba(168,85,255,.45);
+}
+
+.btn-delete {
+    background: rgba(255,0,0,.18);
+    border: 1px solid rgba(255,0,0,.45);
+    color: #ff7575;
+}
+
+.btn-delete:hover {
+    background: var(--danger);
+    color: #fff;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 22px rgba(255,50,50,.55);
+}
+
+.empty {
+    text-align: center;
+    padding: 24px;
+    font-size: 15px;
+    color: var(--text-dim);
+    transition: .25s ease;
+}
+
+@media(max-width: 780px) {
+    .admin-content {
+        margin-left: 0;
+        padding: 30px 20px;
+    }
+    .table-card {
+        padding: 10px;
+        border-radius: 14px;
+    }
+    .table-users th,
+    .table-users td {
+        padding: 10px;
+        font-size: 13px;
+    }
+}

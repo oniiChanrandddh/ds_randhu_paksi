@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif
+}
+
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: #0c031a;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(255, 255, 255, .06);
+    min-width: 260px;
+    gap: 14px
+}
+
+.brand {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 45px;
+    color: #e7c9ff;
+    letter-spacing: .6px
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px
+}
+
+.menu li {
+    width: 100%
+}
+
+.menu li a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 16px 18px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #d5c8ff;
+    transition: .25s ease;
+    position: relative;
+    line-height: 1.25
+}
+
+.menu li a i {
+    width: 26px;
+    font-size: 21px;
+    opacity: .95;
+    text-align: center
+}
+
+.menu li.active a {
+    background: transparent;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.menu li.active a i {
+    color: #fff
+}
+
+.menu li a:hover {
+    background: rgba(138, 99, 255, .18);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(150, 70, 255, .28)
+}
+
+.menu li:not(.active) a:hover i {
+    opacity: 1
+}
+
+.badge {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ff3b6a;
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    min-width: 20px;
+    text-align: center
+}
+
+.logout-btn {
+    margin-top: auto
+}
+
+.logout-btn a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    background: rgba(255, 0, 0, .16);
+    color: #ff7878;
+    border: 1px solid rgba(255, 0, 0, .35);
+    transition: .25s ease
+}
+
+.logout-btn a i {
+    width: 26px;
+    font-size: 20px;
+    text-align: center
+}
+
+.logout-btn a:hover {
+    background: #ff1e37;
+    color: #fff;
+    box-shadow: 0 0 35px rgba(255, 70, 70, .5)
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 6px
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, .15);
+    border-radius: 20px
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent
+}
+
+@media(max-width:1200px) {
+    .sidebar {
+        width: 260px;
+        padding: 30px 22px
+    }
+
+    .menu li a {
+        gap: 20px;
+        padding: 16px 18px
+    }
+}
+
+@media(max-width:992px) {
+    .sidebar {
+        width: 250px;
+        padding: 28px 20px
+    }
+
+    .brand {
+        font-size: 26px;
+        margin-bottom: 40px
+    }
+
+    .menu li a {
+        font-size: 15px;
+        gap: 18px
+    }
+
+    .menu li a i {
+        font-size: 20px
+    }
+}
+
+@media(max-width:768px) {
+    .sidebar {
+        width: 240px
+    }
+
+    .menu li a {
+        font-size: 15px;
+        gap: 18px;
+        padding: 16px 18px
+    }
+
+    .menu li a i {
+        width: 24px
+    }
+}
+
+.sidebar .menu li a span {
+    display: inline-flex;
+    align-items: center
+}
+
+.menu li a:active {
+    transform: none
+}
+
+.sidebar {
+    background: #0c031a
+}

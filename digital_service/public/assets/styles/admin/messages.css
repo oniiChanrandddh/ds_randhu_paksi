@@ -1,0 +1,206 @@
+:root {
+    --bg-main: #0b0218;
+    --bg-elevated: #110724;
+    --border: rgba(255,255,255,0.08);
+    --text: #efe1ff;
+    --text-dim: #b69ce8;
+    --accent: #a855ff;
+    --accent-hover: #be82ff;
+    --danger: #ff4d4d;
+
+    --new: #ff6b6b;
+    --seen: #57ff9a;
+}
+
+body {
+    background: var(--bg-main);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.admin-layout {
+    display: flex;
+    width: 100%;
+}
+
+.admin-content {
+    flex: 1;
+    margin-left: 50px;
+    padding: 50px 55px 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn .35s ease forwards;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.page-header h1 {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 33px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.page-header .subtitle {
+    font-size: 15px;
+    margin-top: 6px;
+    color: var(--text-dim);
+}
+
+.table-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    background: var(--bg-elevated);
+    padding: 16px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 0 28px rgba(168,85,255,.08);
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.table-messages {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-messages thead tr {
+    background: rgba(255,255,255,.05);
+}
+
+.table-messages th {
+    text-align: left;
+    padding: 16px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.table-messages td {
+    padding: 15px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+}
+
+.table-messages tbody tr {
+    transition: .25s ease;
+}
+
+.table-messages tbody tr:hover {
+    background: rgba(168,85,255,.12);
+}
+
+.status-badge {
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    display: inline-block;
+    transition: .25s ease;
+}
+
+.status-badge.new {
+    background: rgba(255,50,50,.18);
+    color: var(--new);
+}
+
+.status-badge.seen {
+    background: rgba(40,255,140,.18);
+    color: var(--seen);
+}
+
+.status-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 14px rgba(168,85,255,.25);
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-detail,
+.btn-delete {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.btn-detail {
+    background: rgba(168,85,255,.25);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn-detail:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(168,85,255,.4);
+}
+
+.btn-delete {
+    background: rgba(255,0,0,.15);
+    border: 1px solid rgba(255,0,0,.35);
+    color: #ff7676;
+}
+
+.btn-delete:hover {
+    background: var(--danger);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(255,50,50,.45);
+}
+
+.empty {
+    text-align: center;
+    padding: 25px;
+    color: var(--text-dim);
+    font-size: 16px;
+}
+
+@media(max-width: 780px) {
+    .admin-content {
+        margin-left: 0;
+        padding: 30px 20px;
+    }
+
+    .table-wrapper {
+        padding: 10px;
+        border-radius: 14px;
+    }
+
+    .table-messages th,
+    .table-messages td {
+        padding: 10px;
+        font-size: 13px;
+    }
+}
